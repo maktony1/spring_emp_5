@@ -20,7 +20,7 @@ public class EmpController {
 	
 	@GetMapping("/list")
 	public void list(Model model) {
-		log.info("ggg");
+		log.info("list....");
 		model.addAttribute("list", service.list());
 	}
 	
