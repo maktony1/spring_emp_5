@@ -35,5 +35,11 @@ public class EmpController {
 		
 		return "emplist";
 	}
+	@RequestMapping("jqueryList")
+	public String jqueryList(Model model) {
+		
+		
+		return "jqueryList";
+	}
 	
 }
