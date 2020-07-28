@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	
-	xmlns:context="http://www.springframework.org/schema/context"
 	xmlns:mybatis-spring="http://mybatis.org/schema/mybatis-spring"
+	xmlns:context="http://www.springframework.org/schema/context"
 	xsi:schemaLocation="http://mybatis.org/schema/mybatis-spring http://mybatis.org/schema/mybatis-spring-1.2.xsd
 		http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
 	
-	<!-- Root Context: defines shared resources visible to all other web components -->
+	<!-- Root Context: defines shared resources visible to all other web components 루트컨텍스트는 디비관련 중요한건 커넥션 풀을 받아와야함  커넥션 풀 객체생성-->
 		<bean id="hikariConfig" class="com.zaxxer.hikari.HikariConfig">
 		<property name="driverClassName" value="net.sf.log4jdbc.sql.jdbcapi.DriverSpy"></property>
 		<property name="jdbcUrl" value="jdbc:log4jdbc:oracle:thin:@localhost:1521:XE"></property>
@@ -26,9 +25,7 @@
 	</bean>
 	
 	<!-- 요거는 내일 설명 -->
-	<mybatis-spring:scan
-		base-package="edu.bit.ex.mapper" />
+	<mybatis-spring:scan base-package="edu.bit.ex.mapper" /> <!-- 얘는 XML 어딧는지 가져오는애 edu.bit.ex 까지는 리소스 -->
 
- 	<context:component-scan
-		base-package="edu.bit.ex.service"></context:component-scan>
+ 	<context:component-scan	base-package="edu.bit.ex.service"></context:component-scan>
 </beans>

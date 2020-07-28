@@ -9,12 +9,7 @@
 	<![CDATA[
 		select * from emp
 	]]>
-	</select>
-	
-	
-	
-	
-	
+	</select><!--  -->
 	
 	
 </mapper>
